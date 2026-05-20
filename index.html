@@ -3,12 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Verdant — Premium Restaurant & Rooftop Dining</title>
+<title>The Verdant — Premium Restaurant & Rooftop Dining, Dinajpur</title>
+<!-- SEO -->
+<meta name="description" content="The Verdant is Dinajpur's premier fine dining restaurant & rooftop. Authentic Bangladeshi cuisine, private events, birthday parties, corporate meetings. Reserve your table today.">
+<meta name="keywords" content="restaurant Dinajpur, rooftop dining Dinajpur, fine dining Bangladesh, birthday party venue Dinajpur, The Verdant restaurant">
+<meta name="author" content="The Verdant Restaurant">
+<meta property="og:title" content="The Verdant — Premium Restaurant & Rooftop Dining">
+<meta property="og:description" content="Elevated dining experience in Dinajpur. Fine cuisine, rooftop ambiance, private events.">
+<meta property="og:type" content="restaurant">
+<meta name="robots" content="index, follow">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231B4332'/><text y='.9em' font-size='75' x='12'>🌿</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,700;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo">The <span>Verdant</span></div>
+    <div class="preloader-line"><div class="preloader-fill"></div></div>
+    <p class="preloader-text">Preparing your experience...</p>
+  </div>
+</div>
+
+<!-- COOKIE CONSENT -->
+<div class="cookie-bar" id="cookieBar">
+  <div class="cookie-content">
+    <i class="fas fa-cookie-bite"></i>
+    <p>We use cookies to enhance your experience. By continuing, you agree to our <a href="#">Privacy Policy</a>.</p>
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-accept" onclick="acceptCookie()">Accept</button>
+    <button class="cookie-decline" onclick="declineCookie()">Decline</button>
+  </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
 <!-- CUSTOM CURSOR -->
 <div class="cursor" id="cursor"></div>
@@ -17,7 +53,7 @@
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="topbar-left">
-    <a href="tel:+8801830244478"><i class="fas fa-phone-alt"></i> +880 18-8141-0248</a>
+    <a href="tel:+8801XXXXXXXXX"><i class="fas fa-phone-alt"></i> +880 1X-XXXX-XXXX</a>
     <a href="#"><i class="fas fa-map-marker-alt"></i> Dinajpur, Bangladesh</a>
     <a href="#"><i class="fas fa-clock"></i> Open: 11AM – 11PM Daily</a>
   </div>
@@ -49,7 +85,7 @@
       <i class="fas fa-shopping-bag"></i>
       <span class="cart-count" id="cartCount">0</span>
     </button>
-    <a href="https://wa.me/8801830244478" class="nav-order-btn" target="_blank"><i class="fab fa-whatsapp"></i> Reserve Now</a>
+    <a href="https://wa.me/8801XXXXXXXXX" class="nav-order-btn" target="_blank"><i class="fab fa-whatsapp"></i> Reserve Now</a>
   </div>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -195,6 +231,9 @@
     <h2 class="sec-title">Our <span>Signature</span> Menu</h2>
     <div class="gold-line-center"></div>
     <p class="sec-desc">From aromatic biryanis to artisan desserts — each category crafted with the finest ingredients and refined technique.</p>
+    <a href="#" onclick="downloadMenuPDF(event)" class="btn-pdf-download">
+      <i class="fas fa-file-pdf"></i> Download Full Menu PDF
+    </a>
   </div>
   <div class="categories-grid" id="categoriesGrid"></div>
 </section>
@@ -308,6 +347,30 @@
   </div>
 </section>
 
+<!-- LOCATION MAP -->
+<section id="location" style="background:var(--cream);padding:80px 60px;">
+  <div class="sec-header reveal">
+    <span class="sec-label">Find Us</span>
+    <h2 class="sec-title">Our <span>Location</span></h2>
+    <div class="gold-line-center"></div>
+  </div>
+  <div class="map-wrap reveal d1">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58092.51560744659!2d88.59035!3d25.62746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbef4a3b2fd08b%3A0x2de0b87cb3b3b1b0!2sDinajpur!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd"
+      width="100%" height="420" style="border:0;border-radius:var(--radius);" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <div class="map-info">
+      <div class="map-info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong><span>Dinajpur, Bangladesh</span></div></div>
+      <div class="map-info-item"><i class="fas fa-clock"></i><div><strong>Hours</strong><span>11AM – 11PM Daily</span></div></div>
+      <div class="map-info-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><span>+880 1X-XXXX-XXXX</span></div></div>
+      <a href="https://maps.google.com/?q=Dinajpur,Bangladesh" target="_blank" class="btn-primary" style="margin-top:8px;text-decoration:none;display:inline-flex;">
+        <i class="fas fa-directions"></i> Get Directions
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- RESERVATION -->
 <section id="reservation">
   <div class="sec-header reveal">
@@ -322,8 +385,8 @@
       <p>We look forward to welcoming you</p>
       <div class="res-info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong><span>Dinajpur, Bangladesh</span></div></div>
       <div class="res-info-item"><i class="fas fa-clock"></i><div><strong>Opening Hours</strong><span>11:00 AM – 11:00 PM Daily</span></div></div>
-      <div class="res-info-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><span>+880 18-8141-0248</span></div></div>
-      <div class="res-info-item"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><span>+880 18-8141-0248</span></div></div>
+      <div class="res-info-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><span>+880 1X-XXXX-XXXX</span></div></div>
+      <div class="res-info-item"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><span>+880 1X-XXXX-XXXX</span></div></div>
       <div class="res-info-item"><i class="fas fa-champagne-glasses"></i><div><strong>Private Events</strong><span>Enquire via WhatsApp</span></div></div>
     </div>
     <div class="reservation-form">
@@ -418,7 +481,7 @@
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-tiktok"></i></a>
-        <a href="https://wa.me/8801830244478" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/8801XXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
     <div>
@@ -444,7 +507,7 @@
       <div class="footer-col-line"></div>
       <ul class="footer-contact">
         <li><i class="fas fa-map-marker-alt"></i> Dinajpur, Bangladesh</li>
-        <li><i class="fas fa-phone-alt"></i> +880 18-8141-0248</li>
+        <li><i class="fas fa-phone-alt"></i> +880 1X-XXXX-XXXX</li>
         <li><i class="fas fa-envelope"></i> info@theverdant.com</li>
         <li><i class="fas fa-clock"></i> Open: 11AM – 11PM Daily</li>
         <li><i class="fas fa-champagne-glasses"></i> Events: Enquire via WhatsApp</li>
@@ -462,5 +525,48 @@
 
 <script src="data.js"></script>
 <script src="script.js"></script>
+<script>
+// ===== PRELOADER =====
+window.addEventListener('load', () => {
+  const pre = document.getElementById('preloader');
+  if(pre) { setTimeout(() => { pre.classList.add('hide'); setTimeout(() => pre.remove(), 600); }, 900); }
+});
+
+// ===== COOKIE CONSENT =====
+function acceptCookie() {
+  localStorage.setItem('cookie_consent','accepted');
+  document.getElementById('cookieBar').classList.remove('show');
+}
+function declineCookie() {
+  localStorage.setItem('cookie_consent','declined');
+  document.getElementById('cookieBar').classList.remove('show');
+}
+window.addEventListener('DOMContentLoaded', () => {
+  if(!localStorage.getItem('cookie_consent')) {
+    setTimeout(() => document.getElementById('cookieBar').classList.add('show'), 1800);
+  }
+});
+
+// ===== BACK TO TOP =====
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('backToTop');
+  if(btn) btn.classList.toggle('show', window.scrollY > 400);
+});
+function scrollToTop() { window.scrollTo({top:0,behavior:'smooth'}); }
+
+// ===== ACTIVE NAV ON SCROLL =====
+const sections = document.querySelectorAll('section[id], div[id="hero"]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if(window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if(link.getAttribute('href') === '#' + current) link.classList.add('active');
+  });
+});
+</script>
 </body>
 </html>

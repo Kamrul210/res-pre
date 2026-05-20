@@ -2,7 +2,7 @@
 // FOODIE HUB PREMIUM — SCRIPT
 // ============================================================
 
-const WHATSAPP = "8801830244478"; // Change to your number
+const WHATSAPP = "8801XXXXXXXXX"; // Change to your number
 
 // ===== CART =====
 let cart = [];
@@ -242,3 +242,51 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFooterLinks();
   updateCart();
 });
+
+// ===== PDF MENU DOWNLOAD =====
+function downloadMenuPDF(e) {
+  e.preventDefault();
+  const win = window.open('', '_blank');
+  let html = `<!DOCTYPE html><html><head>
+  <meta charset="UTF-8">
+  <title>The Verdant — Full Menu</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Jost:wght@400;600&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Jost',sans-serif;color:#1a1a1a;background:white;padding:40px;}
+    .header{text-align:center;border-bottom:2px solid #C9A84C;padding-bottom:28px;margin-bottom:36px;}
+    .logo{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:#1B4332;}
+    .logo span{color:#C9A84C;font-style:italic;}
+    .tagline{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:#C9A84C;margin-top:6px;}
+    .category{margin-bottom:36px;page-break-inside:avoid;}
+    .cat-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1B4332;border-left:4px solid #C9A84C;padding-left:14px;margin-bottom:16px;}
+    .items{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .item{background:#FAF7F0;border-radius:8px;padding:14px 16px;border:1px solid #E5DDD0;}
+    .item-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:#0D1B12;}
+    .item-desc{font-size:11px;color:#6B7280;margin-top:3px;line-height:1.5;}
+    .item-price{font-size:17px;font-weight:700;color:#1B4332;margin-top:6px;}
+    .footer{text-align:center;margin-top:48px;padding-top:20px;border-top:1px solid #E5DDD0;font-size:11px;color:#9CA3AF;letter-spacing:0.1em;}
+  </style>
+  </head><body>
+  <div class="header">
+    <div class="logo">The <span>Verdant</span></div>
+    <div class="tagline">Premium Restaurant & Rooftop · Dinajpur, Bangladesh</div>
+  </div>`;
+
+  categories.forEach(cat => {
+    html += `<div class="category"><div class="cat-title">${cat.emoji} ${cat.name}</div><div class="items">`;
+    cat.items.forEach(item => {
+      html += `<div class="item">
+        <div class="item-name">${item.name}</div>
+        <div class="item-desc">${item.desc}</div>
+        <div class="item-price">${item.price}</div>
+      </div>`;
+    });
+    html += `</div></div>`;
+  });
+
+  html += `<div class="footer">© 2025 The Verdant Restaurant · +880 1X-XXXX-XXXX · Dinajpur, Bangladesh</div></body></html>`;
+  win.document.write(html);
+  win.document.close();
+  setTimeout(() => win.print(), 800);
+}
