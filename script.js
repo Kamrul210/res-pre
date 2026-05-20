@@ -285,7 +285,7 @@ function downloadMenuPDF(e) {
     html += `</div></div>`;
   });
 
-  html += `<div class="footer">© 2025 The Verdant Restaurant · +880 1X-XXXX-XXXX · Dinajpur, Bangladesh</div></body></html>`;
+  html += `<div class="footer">© 2025 The Verdant Restaurant · 8801830244478 · Dinajpur, Bangladesh</div></body></html>`;
   win.document.write(html);
   win.document.close();
   setTimeout(() => win.print(), 800);
